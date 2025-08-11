@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Elevate Labs</title>
+    <style>
+      /* General Reset & Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+        background: #f8f9fa;
+        color: #222;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        line-height: 1.6;
+      }
+
+      header {
+        background: #fff;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1rem 2rem;
+      }
+
+      .logo img {
+        height: 48px;
+        width: auto;
+        display: block;
+      }
+
+      .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: #222;
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        border-radius: 24px;
+        transition: background 0.2s, color 0.2s;
+        display: inline-block;
+      }
+
+      .nav-links a:hover, .nav-links a:focus {
+        background: #007bff;
+        color: #fff;
+      }
+      
+      /* Hamburger Menu for Mobile */
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
+      }
+      .hamburger span {
+        width: 28px;
+        height: 3px;
+        background: #222;
+        border-radius: 2px;
+        transition: all 0.3s;
+      }
+      
+      /* Active state for Hamburger */
+      .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+      .hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+      .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(90deg, #007bff 0%, #00c6ff 100%);
+        color: #fff;
+        padding: 5rem 2rem;
+        text-align: center;
+      }
+
+      .hero-content {
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .hero h1 {
+        font-size: 2.8rem;
+        margin-bottom: 1.2rem;
+        font-weight: 700;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+      }
+
+      .cta-button {
+        display: inline-block;
+        background: #fff;
+        color: #007bff;
+        font-weight: 600;
+        padding: 0.8rem 2.2rem;
+        border-radius: 32px;
+        text-decoration: none;
+        font-size: 1.1rem;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        transition: all 0.2s;
+        border: none;
+        cursor: pointer;
+      }
+
+      .cta-button:hover, .cta-button:focus {
+        background: #0056b3;
+        color: #fff;
+        transform: translateY(-2px);
+      }
+
+      /* Main Content Area for Inner Pages */
+      .content-section {
+        padding: 4rem 2rem;
+        background: #fff;
+        max-width: 1200px;
+        margin: 2rem auto;
+        border-radius: 8px;
+      }
+      .content-section-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+      .card {
+        background: #f8f9fa;
+        padding: 2rem;
+        border-radius: 12px;
+        border-top: 4px solid #007bff;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      }
+      .card h3 {
+        color: #007bff;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+      .card p, .card ul {
+        color: #555;
+        line-height: 1.7;
+      }
+      .card ul {
+        margin: 1rem 0 0 1rem;
+        padding: 0;
+      }
+       .card ul li {
+        margin-bottom: 0.5rem;
+      }
+
+      /* Footer */
+      footer {
+        background: #222;
+        color: #fff;
+        padding: 2rem 0;
+        text-align: center;
+        margin-top: auto;
+      }
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-top: 1rem;
+      }
+      .social-links a {
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .social-links a:hover {
+        color: #007bff;
+      }
+      
+      /* Responsive Styles */
+      @media (max-width: 700px) {
+        .nav-links {
+          display: none; /* Hide nav links by default */
+          position: absolute;
+          top: 72px; /* Position below header */
+          right: 0;
+          background: #fff;
+          flex-direction: column;
+          width: 100%;
+          box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+          gap: 0;
+          text-align: center;
+        }
+        .nav-links.open {
+          display: flex; /* Show when hamburger is clicked */
+        }
+        .nav-links li {
+          border-bottom: 1px solid #f0f0f0;
+        }
+        .nav-links li:last-child {
+          border-bottom: none;
+        }
+        .nav-links a {
+          display: block;
+          padding: 1rem;
+          border-radius: 0;
+        }
+        .hamburger {
+          display: flex; /* Show the hamburger icon */
+        }
+        .hero h1 {
+          font-size: 2rem;
+        }
+        .hero p {
+            font-size: 1rem;
+        }
+        .content-section {
+            padding: 2rem 1rem;
+        }
+      }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html"><img src="logo.png" alt="Elevate Labs Logo"></a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="learn-more.html">Task 5</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Our Services</h1>
+                <p>Comprehensive IT solutions and strategic consulting to elevate your business.</p>
+            </div>
+        </section>
+        
+        <section class="content-section">
+            <h2 style="color: #007bff; font-size: 2.5rem; margin-bottom: 3rem; text-align: center;">What We Offer</h2>
+            <div class="content-section-grid">
+                <div class="card">
+                    <h3>Custom Software Development</h3>
+                    <p>Tailored software solutions designed to meet your specific business requirements.</p>
+                    <ul>
+                        <li>Web & Mobile Applications</li>
+                        <li>Enterprise Software Solutions</li>
+                        <li>API Development & Integration</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Cloud Infrastructure</h3>
+                    <p>Seamless cloud migration and infrastructure management to optimize your IT operations.</p>
+                    <ul>
+                        <li>Cloud Strategy & Planning</li>
+                        <li>Migration & Deployment</li>
+                        <li>Infrastructure Management</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Cybersecurity Solutions</h3>
+                    <p>Comprehensive security solutions to protect your digital assets and ensure compliance.</p>
+                    <ul>
+                        <li>Security Assessment & Auditing</li>
+                        <li>Threat Detection & Response</li>
+                        <li>Compliance Management</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Elevate Labs. All Rights Reserved.</p>
+            <div class="social-links">
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', function() {
+          navLinks.classList.toggle('open');
+          hamburger.classList.toggle('active');
+        });
+      });
+    </script>
+</body>
+</html>

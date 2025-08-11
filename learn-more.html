@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5 Completion Report | Elevate Labs</title>
+    <link rel="stylesheet" href="styles.css"><!-- If you use a separate CSS file -->
+    <style>
+      /* General Reset & Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+        background: #f8f9fa;
+        color: #222;
+        min-height: 100vh;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 800px;
+        margin: 4rem auto;
+        background: #fff;
+        padding: 3rem 2rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+      }
+      h1 {
+        color: #007bff;
+        margin-bottom: 2rem;
+        font-size: 2.2rem;
+      }
+      ul {
+        margin-left: 2rem;
+        margin-bottom: 2rem;
+      }
+      li {
+        margin-bottom: 1rem;
+      }
+      code {
+        background: #f0f0f0;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+
+      header {
+        background: #fff;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1rem 2rem;
+      }
+
+      .logo img {
+        height: 48px;
+        width: auto;
+        display: block;
+      }
+
+      .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: #222;
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        border-radius: 24px;
+        transition: background 0.2s, color 0.2s;
+        display: inline-block;
+      }
+
+      .nav-links a:hover, .nav-links a:focus {
+        background: #007bff;
+        color: #fff;
+      }
+      
+      /* Hamburger Menu for Mobile */
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
+      }
+      .hamburger span {
+        width: 28px;
+        height: 3px;
+        background: #222;
+        border-radius: 2px;
+        transition: all 0.3s;
+      }
+      
+      /* Active state for Hamburger */
+      .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+      .hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+      .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(90deg, #007bff 0%, #00c6ff 100%);
+        color: #fff;
+        padding: 5rem 2rem;
+        text-align: center;
+      }
+
+      .hero-content {
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .hero h1 {
+        font-size: 2.8rem;
+        margin-bottom: 1.2rem;
+        font-weight: 700;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+      }
+
+      /* Main Content Area for Inner Pages */
+      .content-section {
+        padding: 4rem 2rem;
+        background: #fff;
+        max-width: 1200px;
+        margin: 2rem auto;
+        border-radius: 8px;
+      }
+      
+      /* Footer */
+      footer {
+        background: #222;
+        color: #fff;
+        padding: 2rem 0;
+        text-align: center;
+        margin-top: auto;
+      }
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-top: 1rem;
+      }
+      .social-links a {
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .social-links a:hover {
+        color: #007bff;
+      }
+      
+      /* Responsive Styles */
+      @media (max-width: 700px) {
+        .nav-links {
+          display: none; /* Hide nav links by default */
+          position: absolute;
+          top: 72px; /* Position below header */
+          right: 0;
+          background: #fff;
+          flex-direction: column;
+          width: 100%;
+          box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+          gap: 0;
+          text-align: center;
+        }
+        .nav-links.open {
+          display: flex; /* Show when hamburger is clicked */
+        }
+        .nav-links li {
+          border-bottom: 1px solid #f0f0f0;
+        }
+        .nav-links li:last-child {
+          border-bottom: none;
+        }
+        .nav-links a {
+          display: block;
+          padding: 1rem;
+          border-radius: 0;
+        }
+        .hamburger {
+          display: flex; /* Show the hamburger icon */
+        }
+        .hero h1 {
+          font-size: 2rem;
+        }
+        .hero p {
+            font-size: 1rem;
+        }
+        .content-section {
+            padding: 2rem 1rem;
+        }
+      }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html"><img src="logo.png" alt="Elevate Labs Logo"></a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="learn-more.html">Task 5</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Task 5 Completed!</h1>
+                <p>A report on converting the website to a responsive layout.</p>
+            </div>
+        </section>
+        <section class="content-section">
+            <div class="container">
+                <h1>Task 5 Completion Report: <strong>Deploying a Static Website Using GitHub Pages</strong></h1>
+                <p>
+                    <strong>Task 5 is successfully completed!</strong> This milestone involved <strong>deploying a static website</strong> to <strong>GitHub Pages</strong>—a free and powerful platform for hosting web projects. The goal was to make my website <strong>publicly accessible online</strong> using a <strong>public GitHub repository</strong>.
+                </p>
+                <ul>
+                    <li><strong>Repository Creation:</strong> I created a new repository named <code>task5.github.io</code> on GitHub.</li>
+                    <li><strong>Local Setup:</strong> Cloned the repository to my local machine for development.</li>
+                    <li><strong>File Management:</strong> Added all static website files (<code>HTML</code>, <code>CSS</code>, <code>JavaScript</code>) to the project folder.</li>
+                    <li><strong>Version Control:</strong> Used <strong>Git</strong> to commit and push changes to the <code>main</code> branch.</li>
+                    <li><strong>Deployment:</strong> Enabled <strong>GitHub Pages</strong> in repository settings, selecting the <code>main</code> branch and root folder as the source.</li>
+                    <li><strong>Live Website:</strong> After a short wait, my site was live at: <a href="https://task5.github.io" style="text-decoration:underline;" target="_blank">https://task5.github.io</a></li>
+                </ul>
+                <p>
+                    <strong>Key Learnings:</strong> This task gave me hands-on experience with <strong>Git</strong> and <strong>GitHub</strong> for version control and deployment. I learned how to use <strong>GitHub Pages</strong> for <strong>free static hosting</strong> and how to update a live site by simply pushing new commits.
+                </p>
+                <p>
+                    <strong>Deliverables:</strong> The public repository and live website are now ready to be shared as part of my portfolio or for demonstration purposes.
+                </p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Elevate Labs. All Rights Reserved.</p>
+            <div class="social-links">
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', function() {
+          navLinks.classList.toggle('open');
+          hamburger.classList.toggle('active');
+        });
+      });
+    </script>
+</body>
+</html>
